@@ -378,7 +378,9 @@ You must ensure all audit reports are comprehensive, accurate, and suitable for 
                 # Wrap agent with tools for usage
                 agent = ChatAgent(
                     chat_client=AzureAIAgentClient(
-                        project_client=project_client,
+                        project_endpoint=project_endpoint,
+                        model_deployment_name=model_deployment_name,
+                        async_credential=credential,
                         agent_id=created_agent.id
                     ),
                     tools=[
